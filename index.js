@@ -4,7 +4,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const transcriptRoute = require("./routes/transcriptRoute");
 const openaiRoute = require("./routes/openaiRoute");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const mongoDBConnString = process.env.MONGODB_CONN_STRING;
 const port = process.env.PORT || 5000;
 
@@ -27,6 +27,16 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/transcript", transcriptRoute);
 app.use("/api/openai", openaiRoute);
+
+if (process.env.NODE_ENV === "production") {
+	// Serve the React Vite build files
+	app.use(express.static(path.join(__dirname, "../client/dist")));
+
+	// For any other routes, serve the React app's HTML file
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+	});
+}
 
 app.listen(port, () => {
 	console.log(`Server Started at ${port}`);
