@@ -12,8 +12,7 @@
 		"client": "cd ../client && npm run dev",
 		"server": "node index.js",
 		"build": "cd ../client && npm run build",
-		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"heroku-postbuild": "web: npm run build && node index.js"
+		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"keywords": [],
 	"author": "",
