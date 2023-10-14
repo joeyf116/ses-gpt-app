@@ -1,0 +1,20 @@
+{
+  "name": "mern-gpt",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "cd ./server/ && npm install && npm run start",
+    "heroku-postbuild": "cd ./client/ && npm install && npm run build",
+    "server": "cd ./server/ && nodemon index.js ",
+    "client": "cd ./client/ && npm run dev"
+  },
+  "engines": {
+    "node": "v18.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
