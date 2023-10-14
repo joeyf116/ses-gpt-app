@@ -13,8 +13,9 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "ses-gpt-app" #Must be unique in Heroku
+          heroku_app_name: "ses-gpt-app-v1"
           heroku_email: "jfitzdevelop@gmail.com"
           appdir: "server"
+          procfile: "web: npm run build && node index.js"
         env:
           HD_NODE_ENV: "production"
