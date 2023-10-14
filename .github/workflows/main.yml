@@ -16,4 +16,4 @@ jobs:
           heroku_app_name: "ses-gpt-app" #Must be unique in Heroku
           heroku_email: "jfitzdevelop@gmail.com"
           appdir: "/"
-          procfile: "node index.js"
+          procfile: "web: node index.js"
