@@ -12,8 +12,6 @@ const ChatPage = (props: any) => {
 	const [input, setInput] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [messages, setMessages] = useState<ChatMessage[]>([]); // [Message]
-	const [answer, setAnswer] = useState(""); // [Answer]
-	const [errorMessage, setErrorMessage] = useState("");
 	const textAreaRef = useAutoResizeTextArea();
 	const bottomOfChatRef = useRef<HTMLDivElement>(null);
 
@@ -131,13 +129,6 @@ const ChatPage = (props: any) => {
 						onSubmit={handleSubmit}
 					>
 						<div className="relative flex flex-col h-full flex-1 items-stretch md:flex-col">
-							{errorMessage ? (
-								<div className="mb-2 md:mb-0">
-									<div className="h-full flex ml-1 md:w-full md:m-auto md:mb-2 gap-0 md:gap-2 justify-center">
-										<span className="text-red-500 text-sm">{errorMessage}</span>
-									</div>
-								</div>
-							) : null}
 							<div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-gray-900/50 text-white bg-gray-700 rounded-md shadow-[0_0_15px_rgba(0,0,0,0.10)]">
 								<textarea
 									ref={textAreaRef}

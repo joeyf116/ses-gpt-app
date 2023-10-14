@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getAllTranscripts } from "../api/service";
 
 const TranscriptPage = () => {
-	const { data, status, error } = useQuery({
+	const { data, status } = useQuery({
 		queryKey: ["MongoCollection"],
 		queryFn: async () => {
 			const response = await getAllTranscripts();
