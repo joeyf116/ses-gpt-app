@@ -15,5 +15,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "ses-gpt-app" #Must be unique in Heroku
           heroku_email: "jfitzdevelop@gmail.com"
-          appdir: "server"
-          procfile: "node index.js"
+          appdir: "/"
+          procfile: "web: node index.js"
