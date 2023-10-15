@@ -26,12 +26,10 @@ const path = require('path');
 const app = express();
 // Setting up basic middleware for all Express requests
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
-app.use(bodyParser.json()); // Send JSON responses
 // middleware
-app.use(express.json());
 app.options('*', cors())
 app.use(express.json());
-app.use("/api/transcript", transcriptRoute);
+// app.use("/api/transcript", transcriptRoute);
 app.use("/api/openai", openaiRoute);
 
 // if (process.env.NODE_ENV === "production") {
