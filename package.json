@@ -7,7 +7,7 @@
 		"node": "v18.18.1"
 	},
 	"scripts": {
-		"start": "cd server && node index.js",
+		"start": "cd server && npm install && node index.js",
 		"build": "cd client && npm install && npm run build"
 	},
 	"keywords": [],
