@@ -9,7 +9,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "nodemon index.js",
-		"server": "node index.js"
+		"server": "node index.js",
+		"build": "cd client && npm install && npm run build"
 	},
 	"keywords": [],
 	"author": "",
