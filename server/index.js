@@ -7,7 +7,7 @@ const openaiRoute = require("./routes/openaiRoute");
 const bodyParser = require("body-parser");
 const mongoDBConnString = process.env.MONGODB_CONN_STRING;
 const port = process.env.PORT || 5000;
-const path = require("path");
+const path = require('path');
 
 mongoose.connect(mongoDBConnString);
 const database = mongoose.connection;
@@ -25,12 +25,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 // middleware
-const corsOptions = {
-	origin: "localhost:3000", // frontend URI (ReactJS)
-};
 app.use(express.json());
-app.use(cors(corsOptions));
-app.use(cors());
+app.options('*', cors())
 app.use(express.json());
 app.use("/api/transcript", transcriptRoute);
 app.use("/api/openai", openaiRoute);
