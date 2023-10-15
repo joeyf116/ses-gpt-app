@@ -2,26 +2,26 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
-const transcriptRoute = require("./routes/transcriptRoute");
+// const transcriptRoute = require("./routes/transcriptRoute");
 const openaiRoute = require("./routes/openaiRoute");
 const bodyParser = require("body-parser");
 const mongoDBConnString = process.env.MONGODB_CONN_STRING;
 const port = process.env.PORT || 5000;
 const path = require('path');
 
-mongoose.connect(mongoDBConnString, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
-const database = mongoose.connection;
+// mongoose.connect(mongoDBConnString, {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true,
+// });
+// const database = mongoose.connection;
 
-database.on("error", (error) => {
-	console.log(error);
-});
+// database.on("error", (error) => {
+// 	console.log(error);
+// });
 
-database.once("connected", () => {
-	console.log("Database Connected");
-});
+// database.once("connected", () => {
+// 	console.log("Database Connected");
+// });
 
 const app = express();
 // Setting up basic middleware for all Express requests
