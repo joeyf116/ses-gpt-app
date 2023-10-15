@@ -7,6 +7,7 @@ const openaiRoute = require("./routes/openaiRoute");
 const bodyParser = require("body-parser");
 const mongoDBConnString = process.env.MONGODB_CONN_STRING;
 const port = process.env.PORT || 5000;
+const path = require('path');
 
 mongoose.connect(mongoDBConnString);
 const database = mongoose.connection;
