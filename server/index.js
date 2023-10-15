@@ -6,7 +6,7 @@ const transcriptRoute = require("./routes/transcriptRoute");
 const openaiRoute = require("./routes/openaiRoute");
 const bodyParser = require("body-parser");
 const mongoDBConnString = process.env.MONGODB_CONN_STRING;
-const port = process.env.NODE_DOCKER_PORT || 6868;
+const port = 8080;
 const path = require('path');
 
 mongoose.connect(mongoDBConnString, {
@@ -27,9 +27,6 @@ const app = express();
 // Setting up basic middleware for all Express requests
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 // middleware
-var corsOptions = {
-	origin: process.env.CLIENT_ORIGIN || "http://localhost:8081"
-  };
   
 app.use(cors());
 app.use(express.json());
