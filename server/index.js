@@ -9,7 +9,10 @@ const mongoDBConnString = process.env.MONGODB_CONN_STRING;
 const port = process.env.PORT || 5000;
 const path = require('path');
 
-mongoose.connect(mongoDBConnString);
+mongoose.connect(mongoDBConnString, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
 const database = mongoose.connection;
 
 database.on("error", (error) => {
