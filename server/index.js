@@ -31,7 +31,7 @@ app.use("/api/openai", openaiRoute);
 
 if (process.env.NODE_ENV === "production") {
 	// Serve the React Vite build files
-	app.use(express.static(path.join(__dirname, "./client/dist")));
+	app.use(express.static(path.join(__dirname, "../client/dist")));
 
 	// For any other routes, serve the React app's HTML file
 	app.get("*", (req, res) => {
